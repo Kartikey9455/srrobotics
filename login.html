@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Login</h2>
+            <form action="#" method="POST" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="auth-btn">Login</button>
+                <p class="auth-text">
+                    Don't have an account? <a href="signup page.html">Sign up here</a>.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Wait for the DOM to load before executing the script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the login form element
+            const loginForm = document.querySelector('.auth-form');
+            
+            // Add event listener to the form for the submit action
+            loginForm.addEventListener('submit', function(event) {
+                // Prevent the default form submission behavior (e.g., page refresh)
+                event.preventDefault();
+
+                // Get the email and password input values
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                // Validate the form inputs
+                if (email === '' || password === '') {
+                    alert('Please fill in both the email and password fields.');
+                    return;  // Stop the form submission if fields are empty
+                }
+
+                // If validation passes, show a success message (You can add actual login logic here)
+                alert('Login successful!');
+                
+                // Optionally, you can submit the form here or redirect
+                // loginForm.submit(); // If you want to submit the form
+            });
+        });
+    </script>
+</body>
+</html>
