@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="payment-container">
+        <header>
+            <h1>Complete Your Payment</h1>
+            <p>Please select a payment method and enter your details.</p>
+        </header>
+
+        <!-- Payment Form -->
+        <form action="/process-payment" method="POST" id="payment-form">
+            <div class="payment-method">
+                <label for="payment-method">Select Payment Method</label>
+                <select name="payment-method" id="payment-method" required>
+                    <option value="card">Credit/Debit Card</option>
+                    <option value="upi">UPI</option>
+                </select>
+            </div>
+
+            <!-- Credit/Debit Card Payment Form -->
+            <div class="card-payment">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="card-number" placeholder="Enter your card number" required>
+
+                <label for="expiry-date">Expiry Date (MM/YY)</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+
+                <label for="cvv">CVV</label>
+                <input type="password" id="cvv" name="cvv" placeholder="Enter CVV" required>
+            </div>
+
+            <!-- UPI Payment Form -->
+            <div class="upi-payment" style="display:none;">
+                <label for="upi-id">UPI ID</label>
+                <input type="text" id="upi-id" name="upi-id" placeholder="Enter your UPI ID" required>
+            </div>
+
+            <button type="submit" class="payment-btn"><a href="otp page.html">Proceed to Payment</a></button>
+        </form>
+    </div>
+
+    <script>
+        // Show/hide the payment form based on selected payment method
+        document.getElementById('payment-method').addEventListener('change', function() {
+            const paymentMethod = this.value;
+            if (paymentMethod === 'card') {
+                document.querySelector('.card-payment').style.display = 'block';
+                document.querySelector('.upi-payment').style.display = 'none';
+            } else {
+                document.querySelector('.card-payment').style.display = 'none';
+                document.querySelector('.upi-payment').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

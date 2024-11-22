@@ -1,0 +1,158 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #3498db, #1E2A38);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Container for both pages */
+.payment-container, .auth-container {
+    width: 100%;
+    max-width: 480px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Headers */
+header h1, .auth-card h2 {
+    font-size: 28px;
+    color: #3498db;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-align: center;
+}
+
+header p, .auth-text {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Form Section */
+.payment-container form, .auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-method, .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-method label, .form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.payment-method select, .form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.payment-method select:focus, .form-group input:focus {
+    border-color: #3498db;
+}
+
+/* Button Styles */
+.payment-btn, .auth-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-btn:hover, .auth-btn:hover {
+    background: #2980b9;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.5);
+}
+
+.payment-btn a, .auth-btn a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Additional Text for OTP Page */
+.auth-text a {
+    color: #3498db;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.auth-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .payment-container, .auth-container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    header h1, .auth-card h2 {
+        font-size: 24px;
+    }
+
+    .payment-btn, .auth-btn {
+        font-size: 16px;
+    }
+}
+
+/* Specific Styles for Showing Payment Forms */
+.card-payment, .upi-payment {
+    display: none;
+}
+
+.card-payment label, .upi-payment label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.card-payment input, .upi-payment input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.card-payment input:focus, .upi-payment input:focus {
+    border-color: #3498db;
+}
+
